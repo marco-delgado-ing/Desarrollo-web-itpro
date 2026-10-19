@@ -11,3 +11,15 @@ nav{
 footer{
     background-color: blueviolet;
 }
+h2 + p{
+    font-size: x-large;
+}
+h2 ~ p{
+    color: red;
+}
+div > p{
+    background-color: aquamarine;
+}
+div p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

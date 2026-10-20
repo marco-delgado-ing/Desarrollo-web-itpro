@@ -1,59 +1,93 @@
+/* chatgpt y yo */
 :root {
     --primario: #2563eb;
     --secundario: rgb(147, 43, 179);
     --fondo: #f1f5f9;
     --texto: black;
 }
-*{
+
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 /* Recuadro principal */
-#principal{
-    width: min(100% -4rem, 100rem);
+#principal {
+    width: min(100% - 4rem, 100rem);
     margin: 3rem auto;
     padding: 3rem;
-    background-color: var(--primario);
+    background-color: white;
+    color: var(--texto);
     border-radius: 1rem;
-    box-shadow: 0 4px 16px #000;
+    box-shadow: 0 4px 16px #0002;
 }
-/* Barra de navegación */
-.navbar{
+
+/* Barra de navegación mejorada */
+.navbar {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    width: fit-content;
+    margin: 0 auto 2rem auto;
 }
 
-.navbar a:hover{
-    color:white;
+.navbar a {
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar a:hover {
+    color: white;
     background-color: var(--primario);
+    transform: translateY(-1px);
 }
-.navbar a:focus-visible{
+
+.navbar a:focus-visible {
     outline: 2px solid var(--secundario);
+    outline-offset: 2px;
 }
 
-.navbar a{
-    transition: background 0.2s, color .2s, transform .2s ;
-}
-
-.navbar a:hover{
-    transform: translateY(-2px) scale(1.3) rotate(1deg);
-}
-.header,.footer{
+.header,
+.footer {
     background-color: var(--primario);
     color: white;
     text-align: center;
+    padding: 1.5rem;
 }
 
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+}
 
-@media (max-width: 600px){
-    .navbar{
+@media (max-width: 600px) {
+    .navbar {
         flex-direction: column;
+        width: 100%;
+        border-radius: 0.5rem;
+        padding: 1rem;
     }
-    .navbar a{
+
+    .navbar a {
+        width: 100%;
         text-align: center;
     }
-}
 
+    #principal {
+        width: calc(100% - 2rem);
+        padding: 1.5rem;
+        margin: 1rem auto;
+    }
+}

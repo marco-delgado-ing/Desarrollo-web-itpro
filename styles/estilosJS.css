@@ -1,0 +1,51 @@
+:root{
+    --fondo: #0b1020;
+    --texto: #e5e7eb;
+}
+html{
+    font-size: 62.5%;
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-size: 1.6rem;
+    min-height: 100vh;
+    padding: 6rem 2rem;
+}
+h1{
+    font-size: clamp(3.2rem,5vw,5rem);
+    font-weight: 800;
+    letter-spacing: 1rem;
+}
+h1::before{
+    content: "JAVASCRIPT/ITPRO";
+    display: block;
+    width: fit-content;
+    margin-bottom: 2rem;
+    border: 2px solid #4338ca;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.15rem;
+    background-color: #1e1b4b;
+}
+#resultado{
+    max-width: 1000px;
+    min-height: 180px;
+    margin: 0 auto;
+    padding: 3rem;
+    border: 10px dotted #273449;
+    box-shadow: 1.2rem 1.2rem 1rem rgba(255, 255, 255, 0.2);
+}
+#resultado::before{
+    content: "RESULTADO: ";
+    display: block;
+    margin-bottom: 3rem;
+    color: #818cf8;
+}

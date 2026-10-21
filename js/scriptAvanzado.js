@@ -18,7 +18,8 @@ document.getElementById("resultado").innerHTML += "<br>Alumno: "
 
 // EJ 2. Funciones
 function saludar() {
-    pizarron.innerHTML += "<br>Hola " + alumno.nombre;
+    let saludo = "Te estoy saludando";
+    pizarron.innerHTML += "<br>Hola " + alumno.nombre + saludo;
 }
 
 // EJ3. Propiedades y métodos en JS
@@ -33,3 +34,17 @@ let profe = {
     }
 }
 pizarron.innerHTML += "<br>" + profe.nombreCompleto();
+
+// EJ4. Métodos en Arrays
+// push y pop
+calificaciones.push(5);
+pizarron.innerHTML += "<br> Nuevas calificaciones" + calificaciones.join(", ");
+calificaciones.pop();
+calificaciones.push(6);
+pizarron.innerHTML += "<br> Nuevas calificaciones" + calificaciones.join(", ");
+// filter
+let aprobadas = calificaciones.filter(n => n >= 8);
+pizarron.innerHTML += "<br> Calificaciones aprobadas: " + aprobadas.join(", ");
+// map
+let duplicado = calificaciones.map(n => n * 2);
+pizarron.innerHTML += "<br> Calificaciones duplicadas: " + duplicado.join(", ");

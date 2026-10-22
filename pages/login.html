@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de acceso</title>
+    <link rel="stylesheet" href="../styles/evaluadorAlumno.css">
+    <script src="../js/login.js" defer></script>
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>Sistema de acceso</h1>
+
+        <section class="panel">
+            <h2>Registro</h2>
+
+            <form id="formRegistro">
+                <label for="nombreRegistro">Nombre</label>
+                <input id="nombreRegistro" required>
+
+                <label for="correoRegistro">Correo electrónico</label>
+                <input id="correoRegistro" type="email" required>
+
+                <label for="passwordRegistro">Contraseña</label>
+                <input id="passwordRegistro" type="password" minlength="6" required>
+
+                <button type="submit">Crear cuenta</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Iniciar sesión</h2>
+
+            <form id="formLogin">
+                <label for="correoLogin">Correo electrónico</label>
+                <input id="correoLogin" type="email" required>
+
+                <label for="passwordLogin">Contraseña</label>
+                <input id="passwordLogin" type="password" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Resultado</h2>
+            <p id="mensaje" aria-live="polite">Sin actividad.</p>
+            <div id="sesion"></div>
+            <button id="cerrarSesion" type="button" hidden>
+                Cerrar sesión
+            </button>
+        </section>
+    </main>
+</body>
+
+</html>

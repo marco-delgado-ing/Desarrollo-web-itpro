@@ -91,3 +91,37 @@ body {
         margin: 1rem auto;
     }
 }
+
+
+/* Lista de alumnos */
+
+.encabezado-alumnos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contenedor-alumnos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tarjeta-alumno {
+    padding: 2rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    overflow-wrap: anywhere;
+}
+
+.tarjeta-alumno h3 {
+    margin-top: 0;
+}
+
+.tarjeta-alumno p {
+    margin-bottom: 0.7rem;
+}

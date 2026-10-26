@@ -34,9 +34,6 @@ if (home) {
     recuperarSesion();
 }
 
-
-
-
 //Definir funciones
 function mostrarMensaje(texto) {
     mensaje.textContent = texto;
@@ -68,7 +65,7 @@ function registrarUsuario(event) {
         //CAMBIO 7:
         setTimeout(() => {
             window.location = "../index.html";
-        }, 3000);
+        }, 1500);
     }
 }
 function iniciarSesion(event) {

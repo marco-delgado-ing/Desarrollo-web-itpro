@@ -12,7 +12,7 @@
 <body>
     <main class="contenedor">
         <h1>Sistema de acceso</h1>
-
+         <p id="mensaje" aria-live="polite"></p>
         <section class="panel">
             <h2>Registro</h2>
 
@@ -28,29 +28,6 @@
 
                 <button type="submit">Crear cuenta</button>
             </form>
-        </section>
-
-        <section class="panel">
-            <h2>Iniciar sesión</h2>
-
-            <form id="formLogin">
-                <label for="correoLogin">Correo electrónico</label>
-                <input id="correoLogin" type="email" required>
-
-                <label for="passwordLogin">Contraseña</label>
-                <input id="passwordLogin" type="password" required>
-
-                <button type="submit">Entrar</button>
-            </form>
-        </section>
-
-        <section class="panel">
-            <h2>Resultado</h2>
-            <p id="mensaje" aria-live="polite">Sin actividad.</p>
-            <div id="sesion"></div>
-            <button id="cerrarSesion" type="button" hidden>
-                Cerrar sesión
-            </button>
         </section>
     </main>
 </body>

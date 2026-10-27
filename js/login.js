@@ -6,6 +6,7 @@
 //CAMBIO 5: ELEVAR EL SCOPE DE datosSesion Y usuariosRegistrados PARA QUE TODAS LAS F ALCANCEN A VERLA
 //CAMBIO 6: AÑADIR LINK PARA REGISTRARSE EN EL INDEX
 //CAMBIO 7: REDIRECCIONAR DESPUES DE REGISTRAR
+const API_BASE_URL = "http://localhost:3000";
 
 // Definir elementos del DOM
 let formRegistro = document.querySelector("#formRegistro");
@@ -16,6 +17,12 @@ let home = document.querySelector("#home");
 let mensaje = document.querySelector("#mensaje");
 let sesion = document.querySelector("#sesion");
 let cerrar = document.querySelector("#cerrarSesion");
+
+const contenedorDatos = document.querySelector("#contenedorDatos");
+const estadoDatos = document.querySelector("#estadoDatos");
+const btnCargarDatos = document.querySelector("#cargarDatos");
+
+
 //CAMBIO 5
 let usuariosRegistrados = JSON.parse(localStorage.getItem("usuarios")) || [];
 let datosSesion = {}
@@ -32,9 +39,58 @@ if (home) {
     mostrarSesion(datosSesion);
     cerrar.addEventListener("click", cerrarSesion);
     recuperarSesion();
+
+    btnCargarDatos.addEventListener("click", cargarDatos);
+
+
+
+
+
 }
 
 //Definir funciones
+
+async function cargarDatos() {
+    estadoDatos.textContent = "Consultando alumnos...";
+    contenedorDatos.replaceChildren();
+    try {
+        const respuesta = await fetch(API_BASE_URL + "/api/alumnos");
+        const resultado = await respuesta.json();
+
+        alert(resultado.data);
+
+        if (!respuesta.ok || resultado.status != "success"){
+            throw new Error("El API no pudo consultar los datos");
+        }
+        if(resultado.data.length == 0){
+            estadoDatos.textContent = "No hay alumnos registrados";
+            return;
+        }
+
+        resultado.data.forEach(alumno => {
+            const card = document.createElement("article");
+            card.className = "card-alumno";
+
+            const nombre = document.createElement("h3");
+            nombre.textContent = alumno.nombre + " " + alumno.apellidoPaterno + " "+ alumno.apellidoMaterno;
+            const numCuenta = document.createElement("p");
+            numCuenta.textContent = alumno.numCuenta;
+
+            card.append(nombre,numCuenta);
+            contenedorDatos.appendChild(card);
+        });
+    } catch (error) {
+        console.log("Error al cargar los datos: "+error.message);
+        estadoDatos.textContent = "No fue posible cargar los alumnos. Revisa la conexión";
+    }
+}
+
+
+
+
+
+
+
 function mostrarMensaje(texto) {
     mensaje.textContent = texto;
 }

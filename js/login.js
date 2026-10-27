@@ -6,7 +6,7 @@
 //CAMBIO 5: ELEVAR EL SCOPE DE datosSesion Y usuariosRegistrados PARA QUE TODAS LAS F ALCANCEN A VERLA
 //CAMBIO 6: AÑADIR LINK PARA REGISTRARSE EN EL INDEX
 //CAMBIO 7: REDIRECCIONAR DESPUES DE REGISTRAR
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://allocated-discuss-sig-beads.trycloudflare.com";
 
 // Definir elementos del DOM
 let formRegistro = document.querySelector("#formRegistro");

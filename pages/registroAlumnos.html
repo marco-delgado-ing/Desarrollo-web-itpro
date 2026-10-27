@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de acceso</title>
+    <link rel="stylesheet" href="../styles/evaluadorAlumno.css">
+    <script src="../js/registroAlumnos.js" defer></script>
+</head>
+
+<body>
+    <main class="contenedor" id="home">
+        <h1>Registrar alumnos</h1>
+        <p id="mensaje" aria-live="polite"></p>
+        <section class="panel">
+            <form id="formAlumno">
+                <label for="numCuenta">Número de cuenta</label>
+                <input type="text" id="numCuenta" required>
+
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" required>
+
+                <label for="apellidoPaterno">Apellido paterno</label>
+                <input type="text" id="apellidoPaterno" required>
+
+                <label for="apellidoMaterno">Apellido materno</label>
+                <input type="text" id="apellidoMaterno" required>
+
+                <button type="submit">Registrar</button>
+            </form>
+        </section>
+
+    </main>
+</body>
+
+</html>
